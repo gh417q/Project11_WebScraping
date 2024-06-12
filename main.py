@@ -25,10 +25,7 @@ def sequence_1():
     select_value = stats_select.get_attribute('value')
     print(f"Currently selected: {select_value}")
     if select_value == "Playoffs":
-        try:
-            stats_select.click()
-        except ElementClickInterceptedException:
-            stats_select.click()
+        stats_select.click()
         stats_select.send_keys(Keys.ARROW_UP)
         stats_select.send_keys(Keys.ENTER)
         wait = WebDriverWait(driver, 5)
@@ -49,10 +46,7 @@ def sequence_2():
     print(f"Currently selected: {select_value}")
     if select_value == "Playoffs":
         print("Switching to 'Regular Season'")
-        try:
-            stats_select.click()
-        except ElementClickInterceptedException:
-            stats_select.click()
+        stats_select.click()
         stats_select.send_keys(Keys.ARROW_UP)
         stats_select.send_keys(Keys.ENTER)
 
